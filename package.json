@@ -8,7 +8,8 @@
     "inspect:site": "node scripts/inspect-site-inventory.mjs",
     "build:queue": "node scripts/build-queue-from-csv.mjs",
     "bulk:member:dry-run": "node scripts/bulk-book-member-dry-run.mjs",
-    "check": "node --check scripts/login.mjs && node --check scripts/inspect-site-inventory.mjs && node --check scripts/build-queue-from-csv.mjs && node --check scripts/bulk-book-member-dry-run.mjs"
+    "inspect:member:bookings": "node scripts/inspect-member-bookings.mjs",
+    "check": "node --check scripts/login.mjs && node --check scripts/inspect-site-inventory.mjs && node --check scripts/build-queue-from-csv.mjs && node --check scripts/bulk-book-member-dry-run.mjs && node --check scripts/inspect-member-bookings.mjs"
   },
   "dependencies": {
     "playwright": "^1.52.0"
