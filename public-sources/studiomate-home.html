@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <title>스튜디오메이트-필라테스 요가 예약프로그램</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script>
+    (function() {
+      const CONFIG = {
+        production: 'G-W5LBRDVRER',
+        qa: 'G-3YPTVCXP7C'
+      };
+      
+      const isProduction = window.location.hostname === 'studiomate.kr';
+      const analyticsId = isProduction ? CONFIG.production : CONFIG.qa;
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + analyticsId;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() {
+        window.dataLayer.push(arguments);
+      };
+
+      gtag('js', new Date());
+      gtag('config', analyticsId);
+    })();
+  </script>
+
+  <!-- META TAG -->
+  <link rel="canonical" href="https://studiomate.kr/" />
+  <link rel="alternate" hreflang="ko" href="https://studiomate.kr/" />
+  <link rel="alternate" hreflang="en-US" href="https://studiomateonline.com" />
+  <link rel="alternate" hreflang="x-default" href="https://studiomateonline.com" />
+
+  <meta name="description" content="필라테스 요가 예약 회원 관리 프로그램, 그룹레슨 개인레슨 일정 관리" />
+  <meta name="keywords" lang="ko" content="스튜디오메이트,필라테스,요가,예약관리,회원관리,피트니스,그룹레슨,개인레슨" />
+  <meta name="keywords" lang="en" content="" />
+  <meta name="author" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="스튜디오메이트" />
+  <meta property="og:site_name" content="스튜디오메이트" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="https://studiomate.kr" />
+  <meta property="og:description" content="필라테스 요가 예약 회원 관리 프로그램, 그룹레슨 개인레슨 일정 관리" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="fb:admins" content="" />
+  <meta property="fb:app_id" content="" />
+  <meta name="twitter:description" content="" />
+  <meta property="twitter:image" content="" />
+  <meta name="twitter:card" content="" />
+  <meta name="google-site-verification" content="d06gjcNN7Ca4Q1oJQYC1pnFxHkIlHDQOZITS2siqGFg" />
+  <!-- 아이폰에서 전화번호 파랗게 표시 방지 -->
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/partner.css" />
+  <link rel="stylesheet" href="css/operation.css" />
+  <link rel="stylesheet" href="css/member.css" />
+  <link rel="stylesheet" href="css/ticket.css" />
+  <link rel="stylesheet" href="css/schedule.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/style.css?v=1" />
+  <link rel="stylesheet" href="css/popup.css?v=1">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="img/favicon.ico" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+  />
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "스튜디오메이트",
+      "url": "https://studiomate.kr",
+      "logo": "https://studiomate.kr/img/logo_studiomate.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "고객 상담 센터",
+        "telephone": "02-6952-5533",
+        "email": "support@studiomate.kr"
+      },
+      "sameAs": [
+        "https://www.studiomateonline.com",
+        "https://blog.naver.com/studiomate_official",
+        "https://www.facebook.com/스튜디오메이트-2136523026568237",
+        "https://www.instagram.com/studiomate_official"
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <div class="popup">
+    <div class="popup__content">
+      <img style="width: 0px; height: 0px;" src="img/popup/2026_welcome.png" alt="팝업 이미지" loading="lazy">
+      <div class="image-wrapper">
+        <img src="img/popup/2026_welcome.png" alt="팝업 상세 이미지" loading="lazy">
+      </div>
+      <div class="button-wrapper">
+        <button class="popup-button close-button">닫기</button>
+        <button class="popup-button not-today-button">오늘은 안 볼래요</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="header__wrapper">
+      <a>
+        <img class="header__logo" src="img/logo_studiomate.svg" alt="스튜디오메이트 로고" fetchpriority="high"/>
+      </a>
+
+      <!-- 네비게이션 -->
+      <div class="header__nav__wrapper">
+        <nav class="header__nav">
+          <ul>
+            <li class="link" data-menuanchor="main">
+              <a href="#main">홈</a>
+            </li>
+            <li class="link" data-menuanchor="about">
+              <a href="#about">서비스 소개</a>
+            </li>
+            <li class="link" data-menuanchor="mobile">
+              <a href="#mobile">주요기능</a>
+            </li>
+            <li class="link__ads always-show">
+              <a id="ads-inquiry-link" href="./ads.html" target="_blank" rel="noopener noreferrer">광고 문의</a>
+            </li>
+          </ul>
+        </nav>
+        <button id="to-top" class="scroll-to-top">
+          <img src="img/icon/icon_scrollup.svg" class="scroll-to-top-icon" alt="상단 바로가기 아이콘"/>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 메인 컨텐츠 -->
+  <main>
+    <!-- Page 1 - Main -->
+    <div id="background-wrapper">
+      <div id="main" class="bg__gray">
+        <h2 class="visually-hidden">홈</h2>
+        <div class="main__container">
+          <div class="main_wrapper">
+            <div class="top__container">
+              <div class="text__wrapper">
+                <div>
+                  <p class="sub__text fadeIn">당신의 스튜디오를 더 높은 단계로 이끌어줄</p>
+                </div>
+                <div>
+                  <h1 class="main__name fadeIn">스튜디오 운영관리 시스템</h1>
+                </div>
+              </div>
+              <div class="main__content__button__wrapper">
+                <a class="main__content__button fadeIn"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdF79b2l5RMF2Et1ot36g9GWiiDFU6u84II47VaczhIdCBa7Q/viewform?usp=sf_link"
+                  target="_blank" rel="noopener noreferrer">
+                  서비스 문의
+                </a>
+              </div>
+
+            </div>
+            <div class="bottom__container">
+              <div class="main__content__alert">
+                <p>
+                  스튜디오메이트는 <b>크롬 브라우저</b>에 최적화 되어 있습니다<br />
+                  크롬 브라우저를 통해 사용하시기 바랍니다
+                </p>
+                <a href="https://www.google.co.kr/chrome/" target="_blank" rel="noopener noreferrer">
+                  여기에서 다운로드.
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 2 - About -->
+    <div id="about" class="about" data-anchor="secondPage">
+      <h2 class="visually-hidden">서비스 소개</h2>
+      <section class="about__icon__container">
+        <div class="about__icon__wrapper">
+          <div class="icon__item">
+            <img src="img/icon/icon_newspaper.png" alt="신문 아이콘" />
+            <p class="about__label">월평균 방문자 수</p>
+            <p class="about__value" data-count="558967">0</p>
+          </div>
+          <div class="icon__item">
+            <img src="img/icon/icon_building.png" alt="건물 아이콘" />
+            <p class="about__label">전체 이용 시설</p>
+            <p class="about__value" data-count="6086">0</p>
+          </div>
+        </div>
+        <div class="about__icon__wrapper">
+          <div class="icon__item">
+            <img src="img/icon/icon_ticket.png" alt="티켓 아이콘" />
+            <p class="about__label">월평균 예약</p>
+            <p class="about__value" data-count="5203162">0</p>
+          </div>
+          <div class="icon__item">
+            <img src="img/icon/icon_user.png" alt="사용자 아이콘" />
+            <p class="about__label">누적 시설 회원 수</p>
+            <p class="about__value" data-count="3172578">0</p>
+          </div>
+        </div>
+      </section>
+      <section class="about__swiper__container">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="content__wrapper">
+                <p class="content__header__text">“전화를 붙잡고 있지 않아도 돼요. “</p>
+                <div class="content__text__wrapper">
+                  <span class="about__content__text">일단 가성비가 좋습니다. 1년 단위 약정을 강요하지 않고, 가격도 합리적입니다. 결정적으로 회원분들이 예약과 취소를 할
+                    수
+                    있어
+                    관리자가 전화를 붙들고 있지 않아도 된다는 점이 제일 좋습니다.</span>
+                  <div class="divider"></div>
+                  <span class="about__content__text">이지원 필라테스</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="content__wrapper">
+                <p class="content__header__text">“큰일 하나 덜었다고 느껴집니다. “</p>
+                <div class="content__text__wrapper">
+                  <span class="about__content__text">늦은 밤이나 새벽에도 스케줄 변경을 진행할 수 있어 편리하게 사용할 수 있습니다. 또한 수강권 종료일과 잔여 횟수에 대한
+                    공지도
+                    편리해서
+                    운영자는 큰일 하나 덜었다고
+                    느껴집니다.</span>
+                  <div class="divider"></div>
+                  <span class="about__content__text">모던 필라테스</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="content__wrapper">
+                <p class="content__header__text">“번거로운 엑셀은 이제 작별이에요. “</p>
+                <div class="content__text__wrapper">
+                  <span class="about__content__text">번거로운 엑셀에서 벗어나 스튜디오메이트를 사용하니 회원이 센터에 따로 연락하지 않아도 스케줄을 관리할 수 있어 회원
+                    스스로
+                    예약, 약속에 대한 책임감이 생긴 것 같아 좋은 것 같습니다.</span>
+                  <div class="divider"></div>
+                  <span class="about__content__text">케어 필라테스</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Page 3 - Mobile -->
+    <div id="mobile">
+      <h2 class="visually-hidden">주요기능</h2>
+      <div class="mobile__content__description animate fadeIn">
+        <section class="mobile__content__text__section">
+          <div class="mobile__content__text_wrapper">
+            <div>
+              <p class="mobile__content__header__text">수업 예약</p>
+              <p class="mobile__content__header__text">회원부터 관리자까지</p>
+              <p class="mobile__content__header__text">똑똑하게</p>
+            </div>
+            <div>
+              <p class="mobile__content__text">
+                전화나 메신저로 예약하는 번거로움은 이제 그만!
+              </p>
+              <p class="mobile__content__text">
+                언제 어디서나 회원, 관리자 전용 앱으로 수업 현황을
+              </p>
+              <p class="mobile__content__text">실시간으로 조회하고 예약 관리까지 한 번에 할 수 있어요.</p>
+            </div>
+          </div>
+        </section>
+        <section class="mobile__content__link__wrapper">
+          <div class="mobile__content__link">
+            <a
+              href="https://apps.apple.com/kr/app/%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%EB%A9%94%EC%9D%B4%ED%8A%B8-%ED%9A%8C%EC%9B%90%EC%9A%A9/id1400126585">
+              회원용 APP
+            </a>
+            <img src="img/icon/icon_arrow_right.svg" alt="바로가기 아이콘" loading="lazy">
+          </div>
+          <div class="mobile__content__link">
+            <a
+              href="https://apps.apple.com/kr/app/%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%EB%A9%94%EC%9D%B4%ED%8A%B8-%EA%B4%80%EB%A6%AC%EC%9E%90%EC%9A%A9/id1452473786">
+              관리자용 APP
+            </a>
+            <img src="img/icon/icon_arrow_right.svg" alt="바로가기 아이콘" loading="lazy">
+          </div>
+        </section>
+      </div>
+      <div class="mobile__image__wrapper animate left">
+        <picture>
+          <source class="mobile__responsive__image" media="(min-width: 1280px)" srcset="img/image_mobile_web.png">
+          <source class="mobile__responsive__image" media="(min-width: 997px) and (max-width: 1279px)"
+            srcset="img/image_mobile_tablet_horizontality.png">
+          <source class="mobile__responsive__image" media="(min-width: 768px) and (max-width: 996px)"
+            srcset="img/image_mobile_tablet.png">
+          <img class="mobile__responsive__image" src="img/image_mobile_mobile.png" alt="앱 이미지" loading="lazy"/>
+        </picture>
+      </div>
+    </div>
+
+    <!-- Page 4 - Schedule -->
+    <div id="schedule">
+      <section class="schedule__content__wrapper">
+        <div class="schedule__text__wrapper animate fadeIn">
+          <div class="schedule__header__text__wrapper">
+            <p class="schedule__content__header__text">수업 스케줄, </p>
+            <p class="schedule__content__header__text">예약부터 취소까지 <span class="blue__text">한 번에</span></p>
+          </div>
+          <div>
+            <p class="schedule__content__text">
+              예약, 예약 대기, 취소, 폐강 등
+            </p>
+            <p class="schedule__content__text">
+              실시간으로 업데이트되는 수업 스케줄을 한 번에 확인하고,
+            </p>
+            <p class="schedule__content__text">원하는 수업을 예약하거나 취소할 수 있어요.</p>
+          </div>
+        </div>
+        <div class="schedule__booking__img__wrapper animate fadeIn delay">
+          <img src="img/image_booking.png" alt="회원수강권" />
+        </div>
+      </section>
+      <section class="schedule__content__wrapper">
+        <div class="schedule__text__wrapper animate fadeIn">
+          <div class="schedule__header__text__wrapper">
+            <p class="schedule__content__header__text">수업 정보와 </p>
+            <p class="schedule__content__header__text">수강회원 조회도 <span class="blue__text">간편하게</span></p>
+          </div>
+          <div>
+            <p class="schedule__content__text">
+              관리가 까다로운 그룹수업, 아직도 수기나 엑셀로 관리하시나요?
+            </p>
+            <p class="schedule__content__text">
+              수업 등록부터 수업별 수강 회원 목록까지
+            </p>
+            <p class="schedule__content__text">간편하게 조회할 수 있습니다.</p>
+          </div>
+        </div>
+        <div class="schedule__ticket__img__wrapper animate fadeIn delay">
+          <img src="img/image_ticket_info.png" alt="회원수업관리" />
+        </div>
+      </section>
+    </div>
+
+    <!-- Page 5 - Ticket -->
+    <div id="ticket2" class="primary bg__gray1">
+      <section class="ticket2__top__section">
+        <div class="ticket2__main__text">
+          <p class="ticet__text__black">수강권</p>
+          <p><span class="ticet__text__black ticket__text__block">생성과 관리도</span><span
+              class="ticet__text__blue ticket__text__block">
+              한눈에</span></p>
+        </div>
+        <div class="ticket2__sub__text">
+          <p>개인 프라이빗 수업부터 그룹 수업까지!</p>
+          <p>수강 타입을 설정하여 수강권을</p>
+          <p>효과적으로 판매・관리할 수 있어요.</p>
+        </div>
+      </section>
+      <section class="ticket2__bottom__section">
+        <div class="ticket2__bottom_image__wrapper">
+          <picture>
+            <source media="(min-width: 768px) and (max-width:997px)" srcset="img/image_ticket_page_tablet.png">
+            <source media="(min-width: 997px)" srcset="img/image_ticket_page_web.png">
+            <img src="img/image_ticket_page_mobile.png" alt="수강권 페이지 스크린샷" loading="lazy" />
+          </picture>
+        </div>
+      </section>
+    </div>
+
+    <!-- Page 6 - Member -->
+    <div id="member" class="right primary bg__gray1">
+      <section class="member__text__wrapper animate fadeIn">
+        <div>
+          <p class="member__header__text">복잡한</p>
+          <p class="member__header__text">회원관리도 <span class="blue__text">간편하게</span></p>
+        </div>
+        <div>
+          <p class="content__text">원하는 조건에 따라 회원 목록을 조회하고,</p>
+          <p class="content__text">회원이 구매한 수강권 결제 내역과 </p>
+          <p class="content__text">이용내역을 확인할 수 있어요.</p>
+        </div>
+      </section>
+      <section class="member__image__wrapper">
+        <div class="member__detail__wrapper animate left">
+          <picture>
+            <source media="(min-width: 1280px)" srcset="img/image_member_web.png">
+            <source media="(min-width: 997px) and (max-width: 1279px)" srcset="img/image_member_tablet_horizontality.png">
+            <source media="(min-width: 768px) and (max-width: 996px)" srcset="img/image_member_tablet.png">
+            <img src="img/image_member_mobile.png" alt="회원상세페이지" />
+          </picture>
+        </div>
+      </section>
+    </div>
+
+    <!-- Page 7 - Operation  -->
+    <div id="operation" class="primary">
+      <div class="operation__wrapper">
+        <section class="operation__text__wrapper animate fadeIn">
+          <p class="operation__header__text">운영정책을 설정해</p>
+          <p class="blue__text">체계적으로</p>
+        </section>
+        <section class="operation__description__wrapper">
+          <div class="operation__description">
+            <div class="operation__icon__wrapper animate fadeIn">
+              <div class="operation__icon__box animate fadeIn delay">
+                <img src="img/icon/icon_clock.png" alt="시계 아이콘" loading="lazy" />
+              </div>
+              <div class="operation__icon__description__wrapper">
+                <p class="operation__icon__description__header__text">영업 및 근무시간 설정</p>
+                <p class="operation__icon__description__text">시설 영업시간과 강사별 근무시간을 요일・시간별로 설정할 수 있어요. 변동이 많은 공휴일, 휴일 등 특별한
+                  날의
+                  일정도 저장하고 관리할 수 있어요.</p>
+              </div>
+            </div>
+            <div class="operation__icon__wrapper animate fadeIn">
+              <div class="operation__icon__box  animate fadeIn delay">
+                <img src="img/icon/icon_page7_ticket.png" alt="티켓 아이콘" loading="lazy" />
+              </div>
+              <div class="operation__icon__description__wrapper">
+                <p class="operation__icon__description__header__text">운영정보 설정</p>
+                <p class="operation__icon__description__text">예약・취소・당일 예약 변경 등 ‘수업 예약 관련 운영정보'와 게시판, 락커, 체크인, 미수금 자동 입력
+                  등
+                  운영정보를 설정할 수 있어요.</p>
+              </div>
+            </div>
+          </div>
+          <div class="operation__description">
+            <div class="operation__icon__wrapper animate fadeIn">
+              <div class="operation__icon__box animate fadeIn delay">
+                <img src="img/icon/icon_lock.png" alt="자물쇠 아이콘" loading="lazy" />
+              </div>
+              <div class="operation__icon__description__wrapper">
+                <p class="operation__icon__description__header__text">역할별 시스템 접근 권한 설정</p>
+                <p class="operation__icon__description__text">스튜디오 오너가 매니저, 강사 등 관리자 역할을 지정해 배정하고, 역할별 기능 접근 권한을 설정할 수
+                  있어요.
+                </p>
+              </div>
+            </div>
+            <div class="operation__icon__wrapper animate fadeIn last-item">
+              <div class="operation__icon__box animate fadeIn delay">
+                <img src="img/icon/icon_money.png" alt="돈 아이콘" loading="lazy" />
+              </div>
+              <div class="operation__icon__description__wrapper">
+                <p class="operation__icon__description__header__text">매출 및 포인트 관리</p>
+                <p class="operation__icon__description__text">매출 페이지를 통해 수강권・수업 등 전체 매출 및 포인트 내역을 한눈에 확인하고, 리포트를 통해
+                  체계적으로
+                  관리할 수 있어요.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Page 8 - Partner  -->
+    <div id="partner" class="primary">
+      <div class="partner__wrapper">
+        <h2 class="visually-hidden">파트너사</h2>
+        <section class="partner__text__wrapper animate fadeIn">
+          <p class="partner__text__title">공식 제휴 파트너사</p>
+          <p class="partner__text__sub">검증된 브랜드와의 파트너십을 통해 더 좋은 서비스를 제공합니다.</p>
+        </section>
+        <section class="partner__company partner__company-fonv animate fadeIn delay">
+          <div class="partner__company-img fonv">
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/partner_company_fonv_tablet.png">
+              <img src="img/partner_company_fonv.png" alt="fonv 대표 이미지" loading="lazy"/>
+            </picture> 
+          </div>
+          <div class="partner__company-info fonv">
+            <div class="partner__company-name name-fonv">
+              <img src="img/partner_fonv.svg" alt="fonv 로고" loading="lazy"/>
+            </div>
+            <div class="partner__company-description">
+              <p>사용자 경험을 고려하여 오랜 연구와 고민 끝에</p>
+              <p>마침내 시작되는 하이엔드 필라테스 기구의 기준 폰브</p>
+            </div>
+            <div class="partner__company__link">
+              <a
+                href="https://www.fonv.co.kr/">
+                브랜드 보러가기
+              </a>
+              <img src="img/icon/icon_arrow_right.svg" alt="바로가기 아이콘" loading="lazy">
+            </div>
+          </div>
+        </section>
+        <section class="partner__company partner__company-samsung animate fadeIn delay">
+          <div class="partner__company-img samsung">
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/partner_company_samsung_tablet.png">
+              <img src="img/partner_company_samsung.png"  alt="삼성 대표 이미지"/>
+            </picture> 
+          </div>
+          <div class="partner__company-info samsung">
+            <div class="partner__company-name name-samsung">
+              <img src="img/partner_samsung.svg" alt="삼성 로고" loading="lazy"/>
+            </div>
+            <div class="partner__company-description">
+              <p>사업자 고객만을 위해 다양한 혜택을 제공하는</p>
+              <p>삼성전자 직영 온라인몰</p>
+            </div>
+            <div class="partner__company__link">
+              <a
+                href="https://www.samsungebiz.com/sohomall/">
+                브랜드 보러가기
+              </a>
+              <img src="img/icon/icon_arrow_right.svg" alt="바로가기 아이콘" loading="lazy">
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Page 9 - Contact -->
+  <footer id="contact" class="bg__gray1">
+    <h2 class="visually-hidden">문의</h2>
+    <div class="contact__studiomate__container">
+      <section class="contact__studiomate__wrapper">
+        <div class="contact__text__wrapper">
+          <p class="contact__content__title">스튜디오메이트는<br/>더 나은 서비스를 위해<br/>끊임없이 고민합니다.</p>
+          <div class="contact__contact__links">
+            <a itemprop="sameAs" href="https://www.instagram.com/studiomate_official" target="_blank"
+              rel="noopener noreferrer">
+              <img src="img/icon/icon_instagram.svg" alt="인스타그램" loading="lazy" />
+            </a>
+            <a itemprop="sameAs" href="https://www.facebook.com/스튜디오메이트-2136523026568237/" target="_blank"
+              rel="noopener noreferrer">
+              <img src="img/icon/icon_facebook.svg" alt="페이스북" loading="lazy" />
+            </a>
+            <a itemprop="sameAs" href="https://blog.naver.com/studiomate_official" target="_blank"
+              rel="noopener noreferrer">
+              <img src="img/icon/icon_blog.svg" alt="네이버 블로그" loading="lazy" />
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="business__info__title">STUDIOMATE MEMBERSHIP</p>
+          <p class="business__info__description">
+            서비스 점검 시간 :
+            <span class="thick">매주 화요일 오후 2시 ~ 3시</span> <br />
+            <span class="text"> (점검 중에는 서비스가 원활하지 않을 수 있습니다.)</span><br />
+            <span class="warning">* 상담 센터 또는 이메일을 이용하면 더욱 빠른 안내를 받아 볼 수 있습니다.</span>
+          </p>
+          <div class="business__info__store">
+            <a class="business__info__button"
+              href="https://apps.apple.com/kr/app/%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%EB%A9%94%EC%9D%B4%ED%8A%B8-%EA%B4%80%EB%A6%AC%EC%9E%90%EC%9A%A9/id1452473786">
+              <div class="button__appstore">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="img/logo_appstore_web.png">
+                  <img class="appstore__image" src="img/logo_appstore.png" alt="애플 스토어" loading="lazy" />
+                </picture>
+              </div>
+            </a>
+            <a class="business__info__button" href="https://play.google.com/store/apps/details?id=kr.studiomate.manager&hl=ko">
+              <div class="button__googlplay">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="img/logo_googleplay_web.png">
+                  <img src="img/logo_googleplay.png" alt="구글 스토어" loading="lazy" />
+                </picture>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="contact__studiomate__wrapper">
+        <div>
+          <div class="call__wrapper">
+            <div class="call__wrapper__img__wrapper">
+              <img src="img/icon/icon_call.svg" alt="전화기 아이콘" loading="lazy" />
+            </div>
+            <p class="call__number">02-6952-5533 / 5366</p>
+          </div>
+          <div class="contact__buttons__wrapper">
+            <div class="contact__buttons">
+              <a class="contact__button contained"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdF79b2l5RMF2Et1ot36g9GWiiDFU6u84II47VaczhIdCBa7Q/viewform?usp=sf_link"
+                target="_blank" rel="noopener noreferrer">
+                서비스 문의
+              </a>
+              <a class="contact__button outline"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfRGERDGauqG7oeIFcZDpqxORdNxEdh0ZexXn9OHgrQHjnTqQ/viewform"
+                target="_blank" rel="noopener noreferrer">
+                제휴 · 협업 문의
+              </a>
+            </div>
+            <a class="kakaoplus" href="http://pf.kakao.com/_UxnJxcC" target="_blank" rel="noopener noreferrer">
+              <div class="kakaoplus__wrapper">
+                <img src="img/icon/icon_kakao.svg" alt="카카오톡 아이콘" loading="lazy"/>
+              </div>
+              <p>카카오톡 플러스 친구</p>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="logo__wrapper">
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/logo_studiomate_footer_web.png">
+              <img src="img/logo_studiomate_footer_mobile.png" alt="스튜디오메이트 로고" loading="lazy" />
+            </picture>
+          </div>
+          <div class="contact__contact__info">
+            <div>
+              <span>(주) 스튜디오메이트</span>
+              <span>서울특별시 강남구 논현로 98길 28</span>
+            </div>
+            <div>
+              <span>사업자 번호 : 737-88-01259</span>
+              <span>대표 이사 : 이승욱</span>
+            </div>
+            <div>
+              <span>상담 센터 : 02-6952-5533</span>
+              <span>이메일 : support@studiomate.kr</span>
+            </div>
+            <div class="contact__contact__policy-links">
+              <a href="./terms-of-service.html" target="_blank" rel="noopener noreferrer">
+                이용약관
+              </a>
+              <a href="./privacy-policy.html" target="_blank" rel="noopener noreferrer">
+                개인정보처리방침
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </footer>
+
+  <!-- script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js' defer></script>
+
+  <script type="module">
+    var counterData;
+    gsap.registerPlugin(ScrollTrigger);
+    $(document).ready(function () {
+      addScrollToTopHandler();
+      initNavScrollHandler();
+      initCounterAnimation();
+      initSwiper();
+      initAnimationOnView();
+      introCircleResponsive();
+      initTextAnimations();
+      gaEvent();
+    });
+
+    // 스크롤을 최상단으로 올리는 함수
+    function addScrollToTopHandler() {
+      $('#to-top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+      });
+    }
+
+    // 헤더 페이지 네이션
+    function initNavScrollHandler() {
+      $('.header__nav').on('click', 'li', function (e) {
+        // data-menuanchor 속성이 있는 경우에만 preventDefault() 실행
+        const targetId = $(this).attr('data-menuanchor');
+        if (targetId) {
+          e.preventDefault();
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              block: 'start',
+              behavior: 'smooth',
+              inline: 'nearest'
+            });
+          }
+        }
+      });
+    }
+
+    // 숫자 올리는 함수
+    function initCounterAnimation() {
+      const countUpOptions = {
+        useEasing: true,
+        useGrouping: true,
+        separator: ',',  // 천 단위 구분자
+        duration: 1.3,   // 애니메이션 지속 시간
+        decimal: '.'     // 소수점 구분자
+      };
+
+      document.querySelectorAll('.about__value').forEach(function (element) {
+        const endValue = parseInt(element.getAttribute('data-count'));
+        let countUp = null;
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (!countUp) {
+                countUp = new CountUp(
+                  element,
+                  0,
+                  endValue,
+                  0,
+                  countUpOptions.duration,
+                  countUpOptions
+                );
+
+                if (!countUp.error) {
+                  countUp.start(() => {
+                    observer.unobserve(entry.target);
+                  });
+                } else {
+                  console.error(countUp.error);
+                  element.textContent = endValue.toLocaleString();
+                }
+              }
+            }
+          });
+        }, {
+          threshold: 0.3,
+          rootMargin: '0px'
+        });
+
+        observer.observe(element);
+      });
+    }
+
+    // Swiper 초기화 함수
+    function initSwiper() {
+      let swiper = null;
+
+      const createSwiper = () => {
+        if (swiper) {
+          swiper.destroy(true, true);
+        }
+
+        swiper = new Swiper('.swiper', {
+          slidesPerView: 'auto',
+          initialSlide: 1,
+          centeredSlides: true,
+          breakpoints: {
+            768: {
+              initialSlide: 1,
+              centeredSlides: true,
+              slidesPerView: 'auto',
+              spaceBetween: 40
+            },
+            1920: {
+              slidesPerView: 'auto',
+              initialSlide: 1,
+              spaceBetween: 40,
+              centeredSlides: true,
+              allowTouchMove: false,
+              shortSwipes: false,
+              simulateTouch: false,
+            }
+          },
+          on: {
+            breakpoint: function (swiper) {
+              if (window.innerWidth >= 1920) {
+                swiper.slideTo(1, 0);
+                swiper.update();
+              }
+            }
+          }
+        });
+
+        return swiper;
+      };
+
+      swiper = createSwiper();
+
+      window.addEventListener('resize', function () {
+        swiper = createSwiper();
+      });
+
+      return swiper;
+    }
+
+    // 요소에 애니메이션 추가
+    function initAnimationOnView() {
+      const animatedElements = document.querySelectorAll('.animate');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const targetElement = entry.target;
+              setTimeout(() => {
+                if (targetElement.classList.contains('left')) {
+                  if (targetElement.classList.contains('delay')) {
+                    targetElement.style.opacity = '0';
+                    setTimeout(() => {
+                      targetElement.style.opacity = '1';
+                      targetElement.classList.add('to__right');
+                    }, 500);
+                  } else {
+                    targetElement.classList.add('to__right');
+                  }
+                }
+                if (targetElement.classList.contains('right')) {
+                  if (targetElement.classList.contains('delay')) {
+                    targetElement.style.opacity = '0';
+                    setTimeout(() => {
+                      targetElement.style.opacity = '1';
+                      targetElement.classList.add('to__left');
+                    }, 500);
+                  } else {
+                    targetElement.classList.add('to__left');
+                  }
+                }
+                if (targetElement.classList.contains('fadeIn')) {
+                  if (targetElement.classList.contains('delay')) {
+                    targetElement.style.opacity = '0';
+                    setTimeout(() => {
+                      targetElement.style.opacity = '1';
+                      targetElement.classList.add('to__fadeIn');
+                    }, 500);
+                  } else {
+                    targetElement.classList.add('to__fadeIn');
+                  }
+                }
+              }, 200);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px',
+        }
+      );
+
+      animatedElements.forEach((element) => {
+        observer.observe(element);
+      });
+    }
+
+    function introCircleResponsive() {
+      const container = document.getElementById('main');
+      const balls = [];
+
+      // 브레이크포인트 설정
+      const MINI_DESK_BREAKPOINT = 1280; // 미니 테스트탑/테블릿 가로 기준점
+      const MOBILE_BREAKPOINT = 834; // 태블릿/모바일 기준점
+
+      const colorSets = [
+        { size: 1469, needBlur: false, rotate: false, zIndex: -1, opacity: .72, gradient: 'linear-gradient(64deg, #F3F5F9 45.06%, #E3EFFF 65.97%, #B4D5FF 88.18%)' },
+        { size: 1469, needBlur: false, rotate: true, zIndex: -1, opacity: .72, gradient: 'linear-gradient(45deg, #B4D5FF 15%, #E3EFFF 30%, #EFF2F9 50%)' },
+        { size: 718, needBlur: false, rotate: false, zIndex: -2, opacity: .72, gradient: 'linear-gradient(8deg, #B4D5FF 8.3%, rgba(255, 255, 255, 0.00) 84.04%)' },
+        { size: 611, needBlur: true, rotate: false, zIndex: -2, opacity: 1, gradient: 'linear-gradient(344deg, #2D80EB 32.79%, #F3F5F9 98.15%)' }
+      ];
+
+      const BALL_BIG_SIZE = 90;
+      const BALL_MIDDLE_SIZE = 50;
+      const BALL_SMALL_SIZE = 40;
+
+
+      // 데스크톱용 움직임 계수 추가
+      const MOVEMENT_FACTORS = {
+        0: { x: -0.08, y: 0.2 },    // 큰공 1
+        1: { x: -0.1, y: -0.08 },  // 큰공 2
+        2: { x: 0.08, y: 0.08 },   // 중간 공
+        3: { x: 0.3, y: -0.1 }     // 작은 공
+      };
+
+      function getInitialPosition(which, size, screenType) {
+        const positions = {
+          desktop: {
+            0: { // 큰공 1
+              x: container.clientWidth - size * 1.2,
+              y: container.clientHeight - size + 0.7 * size
+            },
+            1: { // 큰공 2
+              x: container.clientWidth - size + 0.8 * size,
+              y: container.clientHeight - size + 0.1 * size
+            },
+            2: { // 중간 공
+              x: -0.6 * size,
+              y: -0.4 * size
+            },
+            3: { // 작은 공
+              x: container.clientWidth - size + 0.1,
+              y: container.clientHeight - size + 0.6 * size
+            }
+          },
+          miniDesktop: {
+            0: { // 큰공
+              x: container.clientWidth - size * 1.15,
+              y: container.clientHeight - size + 0.58 * size
+            },
+            1: { // 큰공2
+              x: container.clientWidth - size * 0.25,
+              y: container.clientHeight - size * 1.5
+            },
+            3: { // 작은 공
+              x: container.clientWidth - size * 0.95,
+              y: container.clientHeight - size * 0.4
+            }
+          },
+          mobile: {
+            0: { // 큰공
+              x: container.clientWidth - size,
+              y: container.clientHeight - size + 0.65 * size
+            },
+            3: { // 작은 공
+              x: container.clientWidth - size * 0.5,
+              y: container.clientHeight - size + 0.65 * size
+            }
+          }
+        };
+
+        return positions[screenType][which];
+      }
+
+      function createBall(ballSize, which, colorChoice, delay = 0) {
+        const ball = document.createElement('div');
+        ball.className = 'ball';
+        ball.dataset.ballType = which;
+
+        const colorSet = colorSets[colorChoice];
+
+        // CSS 변수로 최종 opacity 설정
+        ball.style.setProperty('--final-opacity', colorSet.opacity);
+
+        ball.style.width = `${colorSet.size}px`;
+        ball.style.height = `${colorSet.size}px`;
+        ball.style.position = 'absolute';
+        ball.style.background = colorSet.gradient;
+        ball.style.boxShadow = `0 10px 20px ${colorSet.end}66`;
+        ball.style.zIndex = colorSet.zIndex;
+        ball.style.transition = 'all 1s ease-out';
+
+        if (colorSet.needBlur) {
+          ball.style.filter = 'blur(10px)';
+        }
+
+        if (colorSet.rotate) {
+          ball.style.transform = 'rotate(-64deg)';
+        }
+
+        container.appendChild(ball);
+
+        const screenType = getScreenType();
+        const position = getInitialPosition(which, colorSet.size, screenType);
+
+        ball.style.left = `${position.x}px`;
+        ball.style.top = `${position.y}px`;
+
+        setTimeout(() => {
+          ball.classList.add('circle__fadeInUp');
+
+          if (which === 3) {
+            document.dispatchEvent(new CustomEvent('circlesAnimationComplete'));
+          }
+        }, delay);
+
+        balls.push({
+          ball,
+          initialX: position.x,
+          initialY: position.y,
+          size: colorSet.size,
+          which
+        });
+      }
+
+      function update(e) {
+        const containerRect = container.getBoundingClientRect();
+        const centerX = containerRect.width / 2;
+        const centerY = containerRect.height / 2;
+
+        const deltaX = e.pageX - containerRect.left - centerX;
+        const deltaY = e.pageY - containerRect.top - centerY;
+
+        balls.forEach(ballObj => {
+          const { ball, initialX, initialY, which } = ballObj;
+          const factor = MOVEMENT_FACTORS[which];
+
+          if (factor) {
+            const newX = initialX + (deltaX * factor.x);
+            const newY = initialY + (deltaY * factor.y);
+
+            ball.style.left = `${newX}px`;
+            ball.style.top = `${newY}px`;
+          }
+        });
+      }
+
+      // 화면 타입을 결정하는 함수 추가
+      function getScreenType() {
+        const width = window.innerWidth;
+        if (width > MINI_DESK_BREAKPOINT) {
+          return 'desktop';
+        } else if (width > MOBILE_BREAKPOINT) {
+          return 'miniDesktop';
+        } else {
+          return 'mobile';
+        }
+      }
+
+      function handleResize() {
+        const screenType = getScreenType();
+
+        // 모든 공 제거
+        balls.forEach(({ ball }) => ball.remove());
+        balls.length = 0;
+
+        if (screenType === 'desktop') {
+          createBall(BALL_BIG_SIZE, 0, 0, 100);     // 큰공 1 (0.1초 후)
+          createBall(BALL_BIG_SIZE, 1, 1, 300);     // 큰공 2 (0.3초 후)
+          createBall(BALL_SMALL_SIZE, 3, 3, 600);   // 작은 공 (0.6초 후)
+          createBall(BALL_MIDDLE_SIZE, 2, 2, 900);  // 중간 공 (0.9초 후)
+        } else if (screenType === 'miniDesktop') {
+          createBall(BALL_BIG_SIZE, 0, 0, 100);
+          createBall(BALL_BIG_SIZE, 1, 1, 300);
+          createBall(BALL_SMALL_SIZE, 3, 3, 600);
+        } else {
+          createBall(BALL_BIG_SIZE, 0, 0, 100);
+          createBall(BALL_SMALL_SIZE, 3, 3, 300);
+        }
+      }
+
+      container.addEventListener("mousemove", (e) => {
+        requestAnimationFrame(() => update(e));
+      });
+
+      window.addEventListener('resize', debounce(handleResize, 250));
+
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+
+      // 초기 생성
+      handleResize();
+    }
+
+    // initTextAnimations 함수 수정
+    function initTextAnimations() {
+      const firstText = document.querySelector('.text__wrapper div p');
+      const secondText = document.querySelector('.text__wrapper .main__name');
+      const button = document.querySelector('.main__content__button');
+
+      // 초기 상태 설정
+      [firstText, secondText, button].forEach(el => {
+        if (el) {
+          el.style.opacity = '0';
+          el.classList.remove('fadeIn');
+        }
+      });
+
+      // 원 애니메이션이 완료되면 텍스트 애니메이션 시작
+      document.addEventListener('circlesAnimationComplete', () => {
+        // 첫 번째 텍스트
+        setTimeout(() => {
+          if (firstText) {
+            firstText.style.opacity = '1';
+            firstText.classList.add('text__fadeIn');
+          }
+        }, 0);
+
+        // 두 번째 텍스트
+        setTimeout(() => {
+          if (secondText) {
+            secondText.style.opacity = '1';
+            secondText.classList.add('text__name__fadeIn');
+          }
+        }, 400);
+
+        // 버튼
+        setTimeout(() => {
+          if (button) {
+            button.style.opacity = '1';
+            button.classList.add('text__fadeIn');
+          }
+        }, 700);
+      });
+    }
+
+    function gaEvent() {
+      document.getElementById('ads-inquiry-link').addEventListener('click', function () {
+        gtag('event', 'btn_click', {
+          event_tag: "ads-inquiry-link",
+        });
+      });
+    }
+  </script>
+
+  <script src="./js/popup.js?v=1"></script>
+</body>
+
+</html>
