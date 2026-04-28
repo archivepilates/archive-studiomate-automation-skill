@@ -29,6 +29,7 @@ Read only the references needed for the task:
 - `references/site-analysis-2026-04-28.md`: Read-only site inventory and current automation implications.
 - `references/automation-requirements.md`: Standard Node.js + Playwright requirements for extraction, booking, member/ticket management, and messages.
 - `references/public-sources.md`: Public StudioMate sources downloaded or checked for manual-like information.
+- `references/drive-ai-hub.md`: Google Drive AI Hub operating-board workflow and storage separation.
 - `references/monthly-fixed-booking.md`: Standard monthly fixed-reservation workflow.
 - `references/failure-rules.md`: Status classification and retry policy.
 - `references/security-and-handoff.md`: GitHub, cross-computer handoff, and secret hygiene.
@@ -62,6 +63,21 @@ The automation scripts usually live outside the skill in a workspace project. Ke
 - live run results
 
 If a missing script is needed, scaffold it in the workspace first, then promote only generic reusable pieces into this skill.
+
+## Drive AI Hub Separation
+
+Use Google Drive AI Hub as the main operating board.
+
+- GitHub stores only the reusable skill, code, public-safe references, and safety rules.
+- Google Drive AI Hub stores active work status, handoff notes, operation logs, current decisions, and next actions.
+- Local workspaces store login sessions, raw queues, screenshots, HTML, customer data, and live run outputs.
+
+AI Hub operation guide:
+
+- `StudioMate 자동화 운영 기준 - AI 허브`
+- https://docs.google.com/document/d/1cTkGDIIK120GchJXgV06wmFU1X4yNJ2tfQMOrg3SeuE
+
+After StudioMate work, update the relevant work sheet and leave a public-safe operation summary in the AI Hub. Do not commit operation results to GitHub.
 
 ## Starter Scripts
 
