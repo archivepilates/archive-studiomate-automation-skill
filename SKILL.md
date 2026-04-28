@@ -27,6 +27,7 @@ Read only the references needed for the task:
 
 - `references/site-map.md`: StudioMate pages, selectors, and known UI structure.
 - `references/site-analysis-2026-04-28.md`: Read-only site inventory and current automation implications.
+- `references/automation-priorities.md`: Archive Pilates StudioMate automation priority order and Excel/download-first read rule.
 - `references/automation-requirements.md`: Standard Node.js + Playwright requirements for extraction, booking, member/ticket management, and messages.
 - `references/public-sources.md`: Public StudioMate sources downloaded or checked for manual-like information.
 - `references/drive-ai-hub.md`: Google Drive AI Hub operating-board workflow and storage separation.
@@ -34,23 +35,35 @@ Read only the references needed for the task:
 - `references/failure-rules.md`: Status classification and retry policy.
 - `references/security-and-handoff.md`: GitHub, cross-computer handoff, and secret hygiene.
 
-## Default Monthly Workflow
+## Automation Priority Order
+
+1. Monthly lesson creation
+2. Monthly fixed-reservation creation
+3. Weekly notice posting
+4. Weekly reservation-window settings: `설정 -> 운영정보 -> 예약 가능 기한`
+5. Daily reservation-history download and upload: `수업 -> 예약내역 -> 다운로드`
+6. Monthly settlement-closing sales download and upload: 수강권매출, 수업매출
+
+For read-heavy tasks, prefer StudioMate Excel/download features first, then analyze the downloaded file locally. Use screen scraping mainly for write-flow testing, missing download features, or quick one-off checks.
+
+## Default Monthly Booking Workflow
 
 1. Confirm the target month and the Google Sheet/tab.
-2. Read the fixed-reservation data and current execution columns.
-3. Inspect the target month lesson inventory before booking.
-4. Mark non-work items before execution:
+2. Confirm monthly lessons exist; if not, handle monthly lesson creation first.
+3. Read the fixed-reservation data and current execution columns.
+4. Inspect the target month lesson inventory before booking, preferably by Excel/download export when available.
+5. Mark non-work items before execution:
    - center holidays as `제외 / 센터휴무로 고정예약 제외`
    - missing lessons as `제외` or `확인필요` according to the user rule
    - fixed-cancel memo dates as `제외 / 메모상 해당일 고정취소`
    - dates after ticket expiration as `제외 / 수강권 만료일 YYYY-MM-DD 이후 고정제외`
-5. Prefer member-level bulk booking:
+6. Prefer member-level bulk booking:
    - `회원` -> search member -> member detail -> `일괄예약`
    - select the active ticket with the shortest remaining valid period
    - select all matching target lessons for that member
-6. Use lesson-level booking only for leftovers that cannot be handled by bulk booking.
-7. Retry failed or `확인필요` rows individually once after the main pass.
-8. Re-read the sheet and summarize counts by status.
+7. Use lesson-level booking only for leftovers that cannot be handled by bulk booking.
+8. Retry failed or `확인필요` rows individually once after the main pass.
+9. Re-read the sheet and summarize counts by status.
 
 ## Local Runtime Expectations
 

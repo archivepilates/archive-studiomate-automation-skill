@@ -33,10 +33,12 @@ Allowed `실행상태` values normally are:
 
 ## Faster Standard Order
 
+0. Confirm monthly lessons have been created first. Monthly lesson creation has higher priority than fixed-reservation creation.
 1. Build or read the monthly working-data sheet.
-2. Collect the target month lesson inventory from StudioMate before booking.
+2. Collect the target month lesson inventory from StudioMate before booking, preferably through an Excel/download export when available.
    - Bulk booking pages can expose a broad available lesson list after selecting a valid ticket.
    - Schedule page can also be inspected week by week, but this is slower.
+   - For read-heavy checks, download first and analyze locally instead of scraping every screen.
 3. Mark non-bookable rows before live booking:
    - center holidays
    - missing or deleted lessons

@@ -15,6 +15,29 @@ Use these requirements when building or reviewing StudioMate automation scripts.
   - If `DRY_RUN=true`, print planned actions only and do not click final action buttons.
   - If an action can change bookings, cancellations, tickets, members, messages, or sales state, require `CONFIRM=true`.
 
+## Automation Priority Order
+
+1. Monthly lesson creation.
+2. Monthly fixed-reservation creation.
+3. Weekly notice posting.
+4. Weekly reservation-window settings under `설정 -> 운영정보 -> 예약 가능 기한`.
+5. Daily reservation-history download and upload under `수업 -> 예약내역 -> 다운로드`.
+6. Monthly settlement-closing sales download and upload for ticket sales and lesson sales.
+
+## Excel/Download-First Rule
+
+For read-heavy tasks, prefer StudioMate Excel/download features over screen-by-screen DOM scraping.
+
+Required pattern:
+
+1. Apply filters in StudioMate.
+2. Use Excel/download when available.
+3. Convert the downloaded file to CSV/JSON locally.
+4. Analyze locally and upload only reviewed outputs or summaries.
+5. Keep raw Excel/CSV exports local and uncommitted.
+
+Use DOM scraping mainly when no download is available, when testing a write flow, or when the user asks for a quick one-off screen check.
+
 ## 1. Read Automation
 
 ### 1-1. Schedule Extraction
