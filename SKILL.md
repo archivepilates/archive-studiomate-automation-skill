@@ -86,3 +86,20 @@ This skill repository includes generic scripts for future agents:
 - `scripts/login.mjs`: open StudioMate, log in with `STUDIOMATE_ID` / `STUDIOMATE_PW` when possible, and save storage state.
 - `scripts/inspect-site-inventory.mjs`: read-only route inventory for core menus; writes JSON/CSV/debug artifacts locally.
 - `scripts/build-queue-from-csv.mjs`: build a reservation queue from a reviewed CSV export.
+- `scripts/bulk-book-member-dry-run.mjs`: open `회원 -> 회원검색 -> 일괄예약`, select a usable ticket when available, inspect available lessons, and write a local dry-run JSON result without submitting a booking.
+
+Typical dry-run command:
+
+```bash
+STUDIOMATE_STORAGE_STATE=/path/to/studiomate.storageState.json \
+DRY_RUN=true \
+HEADLESS=true \
+npm run bulk:member:dry-run -- --member "<member name>"
+```
+
+Expected safe statuses include:
+
+- `DRY_RUN_READY`: bulk-booking screen and available lessons were inspected.
+- `NO_USABLE_TICKET`: member detail and bulk-booking entry worked, but no usable ticket was available.
+- `NO_AVAILABLE_LESSONS`: ticket selection worked, but the selected ticket exposed zero available lessons.
+- `CHECK_FAILED`: the script could not safely reach or verify a required step.

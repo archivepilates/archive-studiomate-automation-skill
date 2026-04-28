@@ -49,6 +49,7 @@ Allowed `실행상태` values normally are:
    - choose the shortest remaining usable ticket
    - select that member's target lessons
    - submit only after selected lessons match the queue
+   - first validate the member flow with `npm run bulk:member:dry-run -- --member "<name>"`
 6. Use lesson-level booking only for rows not possible via bulk booking.
 7. Retry failures individually once after the main pass.
 8. Update sheet execution columns and re-read them for verification.
